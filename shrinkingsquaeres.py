@@ -1,28 +1,24 @@
 import turtle
 
-# Turtle nesnesini oluştur
-square_turtle = turtle.Turtle()
+turtle_screen=turtle.Screen()
+turtle_screen.bgcolor("red")
+turtle_screen.title("İç İçe Geçen Kareler")
 
-# Başlangıç kenar uzunluğu
-side_length = 200
+turtle_instance=turtle.Turtle()
+turtle_instance.color("yellow")
 
-# Kareleri çiz
-for i in range(10):
-    # Kare çiz
-    for j in range(4):
-        square_turtle.forward(side_length)
-        square_turtle.left(90)
 
-    # Sonraki kareye geçmeden önce boyutu küçült
-    side_length -= 20
+def shrinkingSquare(size):
+    for i in range(4):
+        turtle_instance.forward(size)
+        turtle_instance.left(90)
+        size=size-5
 
-    # Kareler arasındaki boşluğu bırak
-    square_turtle.penup()
-    square_turtle.forward(10)
-    square_turtle.right(90)
-    square_turtle.forward(10)
-    square_turtle.right(90)
-    square_turtle.pendown()
 
-# Çizimi tamamla ve pencereyi kapat
+shrinkingSquare(150)
+shrinkingSquare(130)
+shrinkingSquare(110)
+shrinkingSquare(90)
+shrinkingSquare(70)
+
 turtle.done()
